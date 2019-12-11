@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Meals
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @cuisine.meals.each do |meal_plan| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/meal_plans/<%= meal_plan.id %>">
+          <%= meal_plan.created_at %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

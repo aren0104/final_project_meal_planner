@@ -56,6 +56,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_follow_request/:id_to_remove", { :controller => "follow_requests", :action => "destroy_row" })
+  get("/delete_follow_request_from_recipient/:id_to_remove", { :controller => "follow_requests", :action => "destroy_row_from_recipient" })
+  get("/delete_follow_request_from_sender/:id_to_remove", { :controller => "follow_requests", :action => "destroy_row_from_sender" })
 
   #------------------------------
 
@@ -75,6 +77,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_comment/:id_to_remove", { :controller => "comments", :action => "destroy_row" })
+  get("/delete_comment_from_dish/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_dish" })
+  get("/delete_comment_from_author/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_author" })
 
   #------------------------------
 
@@ -94,6 +98,10 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_favorite/:id_to_remove", { :controller => "favorites", :action => "destroy_row" })
+  get("/delete_favorite_from_meal/:id_to_remove", { :controller => "favorites", :action => "destroy_row_from_meal" })
+  get("/delete_favorite_from_cuisine/:id_to_remove", { :controller => "favorites", :action => "destroy_row_from_cuisine" })
+  get("/delete_favorite_from_dish/:id_to_remove", { :controller => "favorites", :action => "destroy_row_from_dish" })
+  get("/delete_favorite_from_user/:id_to_remove", { :controller => "favorites", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -113,6 +121,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_dish/:id_to_remove", { :controller => "dishes", :action => "destroy_row" })
+  get("/delete_dish_from_cuisine/:id_to_remove", { :controller => "dishes", :action => "destroy_row_from_cuisine" })
 
   #------------------------------
 

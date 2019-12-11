@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Bookedmarked Dishes
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.bookedmarked_dishes.each do |dish| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/dishes/<%= dish.id %>">
+          <%= dish.name %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>
