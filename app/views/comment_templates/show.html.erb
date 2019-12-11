@@ -38,7 +38,11 @@
       </dt>
       <!-- Display author_id start -->
       <dd>
-        <%= @comment.author_id %>
+        <% if @comment.author.present? %>
+          <a href="/users/<%= @comment.author_id %>">
+            <%= @comment.author.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display author_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display dish_id start -->
       <dd>
-        <%= @comment.dish_id %>
+        <% if @comment.dish.present? %>
+          <a href="/dishes/<%= @comment.dish_id %>">
+            <%= @comment.dish.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display dish_id end -->
 

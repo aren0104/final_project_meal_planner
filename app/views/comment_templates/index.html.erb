@@ -62,13 +62,21 @@
 
         <!-- Display comment.author_id start -->
         <td>
-          <%= comment.author.email %>
+          <% if comment.author.present? %>
+            <a href="/users/<%= comment.author.id %>">
+              <%= comment.author.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.author_id end -->
 
         <!-- Display comment.dish_id start -->
         <td>
-          <%= comment.dish.name %>
+          <% if comment.dish.present? %>
+            <a href="/dishes/<%= comment.dish.id %>">
+              <%= comment.dish.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.dish_id end -->
 

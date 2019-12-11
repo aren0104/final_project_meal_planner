@@ -66,25 +66,41 @@
 
         <!-- Display favorite.dish_id start -->
         <td>
-          <%= favorite.dish.name %>
+          <% if favorite.dish.present? %>
+            <a href="/dishes/<%= favorite.dish.id %>">
+              <%= favorite.dish.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display favorite.dish_id end -->
 
         <!-- Display favorite.fan_id start -->
         <td>
-          <%= favorite.user.email %>
+          <% if favorite.user.present? %>
+            <a href="/users/<%= favorite.user.id %>">
+              <%= favorite.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display favorite.fan_id end -->
 
         <!-- Display favorite.meal_id start -->
         <td>
-          <%= favorite.meal.created_at %>
+          <% if favorite.meal.present? %>
+            <a href="/meal_plans/<%= favorite.meal.id %>">
+              <%= favorite.meal.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display favorite.meal_id end -->
 
         <!-- Display favorite.cuisine_id start -->
         <td>
-          <%= favorite.cuisine.name %>
+          <% if favorite.cuisine.present? %>
+            <a href="/cuisines/<%= favorite.cuisine.id %>">
+              <%= favorite.cuisine.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display favorite.cuisine_id end -->
 
