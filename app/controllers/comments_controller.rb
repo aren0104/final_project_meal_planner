@@ -58,7 +58,7 @@ class CommentsController < ApplicationController
   def update_row
     @comment = Comment.find(params.fetch("id_to_modify"))
 
-    @comment.author_id = params.fetch("author_id")
+    
     @comment.dish_id = params.fetch("dish_id")
     @comment.description = params.fetch("description")
 
