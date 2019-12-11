@@ -1,6 +1,6 @@
 class MealPlansController < ApplicationController
   def index
-    @meal_plans = MealPlan.all
+    @meal_plans = MealPlan.page(params[:page]).per(10)
 
     render("meal_plan_templates/index.html.erb")
   end
