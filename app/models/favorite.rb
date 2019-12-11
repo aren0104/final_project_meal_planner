@@ -1,6 +1,11 @@
 class Favorite < ApplicationRecord
   # Direct associations
 
+  belongs_to :meal,
+             :required => false,
+             :class_name => "MealPlan",
+             :counter_cache => true
+
   belongs_to :cuisine
 
   belongs_to :dish,
