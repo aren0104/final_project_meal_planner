@@ -1,47 +1,30 @@
-<!-- Form favorite start -->
 <form action="/create_favorite_from_cuisine" method="post">
-<!-- Form favorite end -->
 
-  <!-- Label and input for dish_id start -->
   <div class="form-group">
     <label for="dish_id">
       Dish
     </label>
 
-    <!-- Input for dish_id start -->
     <%= select_tag(:dish_id, options_from_collection_for_select(Dish.all, :id, :name, @favorite.dish_id), :class => "form-control") %>
-    <!-- Input for dish_id end -->
   </div>
-  <!-- Label and input for dish_id end -->
 
-  <!-- Label and input for fan_id start -->
   <div class="form-group">
     <label for="fan_id">
       Fan
     </label>
 
-    <!-- Input for fan_id start -->
     <%= select_tag(:fan_id, options_from_collection_for_select(User.all, :id, :email, @favorite.fan_id), :class => "form-control") %>
-    <!-- Input for fan_id end -->
   </div>
-  <!-- Label and input for fan_id end -->
 
-  <!-- Label and input for meal_id start -->
   <div class="form-group">
     <label for="meal_id">
       Meal
     </label>
 
-    <!-- Input for meal_id start -->
     <%= select_tag(:meal_id, options_from_collection_for_select(MealPlan.all, :id, :created_at, @favorite.meal_id), :class => "form-control") %>
-    <!-- Input for meal_id end -->
   </div>
-  <!-- Label and input for meal_id end -->
 
-  <!-- Label and input for cuisine_id start -->
-  <!-- Input for cuisine_id start -->
   <input type="hidden" name="cuisine_id" value="<%= @cuisine.id %>">
-  <!-- Input for cuisine_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create favorite

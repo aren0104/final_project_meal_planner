@@ -1,29 +1,16 @@
-<!-- Form comment start -->
 <form action="/create_comment_from_dish" method="post">
-<!-- Form comment end -->
 
-  <!-- Label and input for author_id start -->
-  <!-- Input for "author_id" start -->
   <input type="hidden" name="author_id" value="<%= current_user.id %>">
-  <!-- Input for "author_id" end -->
-  <!-- Label and input for author_id end -->
 
-  <!-- Label and input for dish_id start -->
-  <!-- Input for dish_id start -->
   <input type="hidden" name="dish_id" value="<%= @dish.id %>">
-  <!-- Input for dish_id end -->
 
-  <!-- Label and input for description start -->
   <div class="form-group">
     <label for="description">
       Description
     </label>
 
-    <!-- Input for description start -->
     <textarea id="description" name="description" class="form-control" rows="3"><%= @comment.description %></textarea>
-    <!-- Input for description end -->
   </div>
-  <!-- Label and input for description end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create comment

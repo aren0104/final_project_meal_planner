@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "meal_plan_templates/meal_plans_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -46,23 +42,17 @@
 
       <% @meal_plans.each do |meal_plan| %>
       <tr>
-        <!-- Display meal_plan.id start -->
         <td>
           <%= meal_plan.id %>
         </td>
-        <!-- Display meal_plan.id end -->
 
-        <!-- Display meal_plan.created_at start -->
         <td>
           <%= time_ago_in_words(meal_plan.created_at) %> ago
         </td>
-        <!-- Display meal_plan.created_at end -->
 
-        <!-- Display meal_plan.updated_at start -->
         <td>
           <%= time_ago_in_words(meal_plan.updated_at) %> ago
         </td>
-        <!-- Display meal_plan.updated_at end -->
 
         <td>
           <a href="/meal_plans/<%= meal_plan.id %>">
