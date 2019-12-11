@@ -1,0 +1,92 @@
+<h1>
+  Edit dish #<%= @dish.id %>
+</h1>
+
+<hr>
+
+<!-- Form dish start -->
+<form action="/update_dish/<%= @dish.id %>" method="post">
+<!-- Form dish end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @dish.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for calories start -->
+  <div class="form-group">
+    <label for="calories">
+      Calories
+    </label>
+
+    <!-- Input for calories start -->
+    <input type="text" id="calories" name="calories" class="form-control" value="<%= @dish.calories %>">
+    <!-- Input for calories end -->
+  </div>
+  <!-- Label and input for calories end -->
+
+  <!-- Label and input for recipe start -->
+  <div class="form-group">
+    <label for="recipe">
+      Recipe
+    </label>
+
+    <!-- Input for recipe start -->
+    <textarea id="recipe" name="recipe" class="form-control" rows="3"><%= @dish.recipe %></textarea>
+    <!-- Input for recipe end -->
+  </div>
+  <!-- Label and input for recipe end -->
+
+  <!-- Label and input for image start -->
+  <div class="form-group">
+    <label for="image">
+      Image
+    </label>
+
+    <!-- Input for image start -->
+    <input type="text" id="image" name="image" class="form-control" value="<%= @dish.image %>">
+    <!-- Input for image end -->
+  </div>
+  <!-- Label and input for image end -->
+
+  <!-- Label and input for meal_id start -->
+  <div class="form-group">
+    <label for="meal_id">
+      Meal
+    </label>
+
+    <!-- Input for meal_id start -->
+    <input type="text" id="meal_id" name="meal_id" class="form-control" value="<%= @dish.meal_id %>">
+    <!-- Input for meal_id end -->
+  </div>
+  <!-- Label and input for meal_id end -->
+
+  <!-- Label and input for cuisine_id start -->
+  <div class="form-group">
+    <label for="cuisine_id">
+      Cuisine
+    </label>
+
+    <!-- Input for cuisine_id start -->
+    <input type="text" id="cuisine_id" name="cuisine_id" class="form-control" value="<%= @dish.cuisine_id %>">
+    <!-- Input for cuisine_id end -->
+  </div>
+  <!-- Label and input for cuisine_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update dish
+  </button>
+</form>
+
+<hr>
+
+<a href="/dishes">
+  Go back
+</a>
