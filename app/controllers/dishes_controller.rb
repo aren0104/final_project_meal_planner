@@ -6,6 +6,8 @@ class DishesController < ApplicationController
   end
 
   def show
+    @favorite = Favorite.new
+    @comment = Comment.new
     @dish = Dish.find(params.fetch("id_to_display"))
 
     render("dish_templates/show.html.erb")
@@ -31,6 +33,25 @@ class DishesController < ApplicationController
       @dish.save
 
       redirect_back(:fallback_location => "/dishes", :notice => "Dish created successfully.")
+    else
+      render("dish_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_cuisine
+    @dish = Dish.new
+
+    @dish.name = params.fetch("name")
+    @dish.calories = params.fetch("calories")
+    @dish.recipe = params.fetch("recipe")
+    @dish.image = params.fetch("image")
+    @dish.meal_id = params.fetch("meal_id")
+    @dish.cuisine_id = params.fetch("cuisine_id")
+
+    if @dish.valid?
+      @dish.save
+
+      redirect_to("/cuisines/#{@dish.cuisine_id}", notice: "Dish created successfully.")
     else
       render("dish_templates/new_form_with_errors.html.erb")
     end

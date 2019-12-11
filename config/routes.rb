@@ -66,6 +66,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/comments/new", { :controller => "comments", :action => "new_form" })
   post("/create_comment", { :controller => "comments", :action => "create_row" })
+  post("/create_comment_from_dish", { :controller => "comments", :action => "create_row_from_dish" })
 
   # READ
   get("/comments", { :controller => "comments", :action => "index" })
@@ -87,6 +88,9 @@ Rails.application.routes.draw do
   # CREATE
   get("/favorites/new", { :controller => "favorites", :action => "new_form" })
   post("/create_favorite", { :controller => "favorites", :action => "create_row" })
+  post("/create_favorite_from_meal_plan", { :controller => "favorites", :action => "create_row_from_meal_plan" })
+  post("/create_favorite_from_cuisine", { :controller => "favorites", :action => "create_row_from_cuisine" })
+  post("/create_favorite_from_dish", { :controller => "favorites", :action => "create_row_from_dish" })
 
   # READ
   get("/favorites", { :controller => "favorites", :action => "index" })
@@ -110,6 +114,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/dishes/new", { :controller => "dishes", :action => "new_form" })
   post("/create_dish", { :controller => "dishes", :action => "create_row" })
+  post("/create_dish_from_cuisine", { :controller => "dishes", :action => "create_row_from_cuisine" })
 
   # READ
   get("/dishes", { :controller => "dishes", :action => "index" })

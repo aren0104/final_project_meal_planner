@@ -6,6 +6,7 @@ class MealPlansController < ApplicationController
   end
 
   def show
+    @favorite = Favorite.new
     @meal_plan = MealPlan.find(params.fetch("id_to_display"))
 
     render("meal_plan_templates/show.html.erb")

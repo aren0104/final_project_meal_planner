@@ -34,6 +34,57 @@ class FavoritesController < ApplicationController
     end
   end
 
+  def create_row_from_dish
+    @favorite = Favorite.new
+
+    @favorite.dish_id = params.fetch("dish_id")
+    @favorite.fan_id = params.fetch("fan_id")
+    @favorite.meal_id = params.fetch("meal_id")
+    @favorite.cuisine_id = params.fetch("cuisine_id")
+
+    if @favorite.valid?
+      @favorite.save
+
+      redirect_to("/dishes/#{@favorite.dish_id}", notice: "Favorite created successfully.")
+    else
+      render("favorite_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_cuisine
+    @favorite = Favorite.new
+
+    @favorite.dish_id = params.fetch("dish_id")
+    @favorite.fan_id = params.fetch("fan_id")
+    @favorite.meal_id = params.fetch("meal_id")
+    @favorite.cuisine_id = params.fetch("cuisine_id")
+
+    if @favorite.valid?
+      @favorite.save
+
+      redirect_to("/cuisines/#{@favorite.cuisine_id}", notice: "Favorite created successfully.")
+    else
+      render("favorite_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_meal_plan
+    @favorite = Favorite.new
+
+    @favorite.dish_id = params.fetch("dish_id")
+    @favorite.fan_id = params.fetch("fan_id")
+    @favorite.meal_id = params.fetch("meal_id")
+    @favorite.cuisine_id = params.fetch("cuisine_id")
+
+    if @favorite.valid?
+      @favorite.save
+
+      redirect_to("/meal_plans/#{@favorite.meal_id}", notice: "Favorite created successfully.")
+    else
+      render("favorite_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @favorite = Favorite.find(params.fetch("prefill_with_id"))
 
