@@ -10,6 +10,8 @@ RSpec.describe MealPlan, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:cuisines) }
+
     it { should have_many(:dishes) }
 
     end

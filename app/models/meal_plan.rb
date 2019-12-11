@@ -7,6 +7,10 @@ class MealPlan < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :cuisines,
+             :through => :favorites,
+             :source => :cuisine
+
   has_many   :dishes,
              :through => :favorites,
              :source => :dish
