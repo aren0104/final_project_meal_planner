@@ -1,0 +1,20 @@
+<h1>
+  Edit meal plan #<%= @meal_plan.id %>
+</h1>
+
+<hr>
+
+<!-- Form meal_plan start -->
+<form action="/update_meal_plan/<%= @meal_plan.id %>" method="post">
+<!-- Form meal_plan end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update meal plan
+  </button>
+</form>
+
+<hr>
+
+<a href="/meal_plans">
+  Go back
+</a>

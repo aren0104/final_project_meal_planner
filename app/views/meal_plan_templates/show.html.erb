@@ -1,0 +1,55 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Meal plan #<%= @meal_plan.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/meal_plans" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link meal_plan start -->
+      <div class="col">
+        <a href="/meal_plans/<%= @meal_plan.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit meal plan
+        </a>
+      </div>
+      <!-- Edit link meal_plan end -->
+
+      <!-- Delete link meal_plan start -->
+      <div class="col">
+        <a href="/delete_meal_plan/<%= @meal_plan.id %>" class="btn btn-block btn-outline-secondary">
+          Delete meal plan
+        </a>
+      </div>
+      <!-- Delete link meal_plan end -->
+    </div>
+
+    <dl>
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@meal_plan.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@meal_plan.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
