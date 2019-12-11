@@ -21,6 +21,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :bookedmarked_dishes,
+             :through => :favorites,
+             :source => :dish
+
   # Validations
 
   # Include default devise modules. Others available are:
